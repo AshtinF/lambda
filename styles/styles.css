@@ -1,8 +1,8 @@
 .longRow {
+    display: block;
     overflow-x: auto;
     white-space: nowrap;
 }
 .moveCard {
     display: inline-block;
-    float: none;
 }
