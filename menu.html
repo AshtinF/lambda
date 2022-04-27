@@ -51,8 +51,12 @@
     <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js.map"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <link href="styles/cart.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.shop.js"></script>
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
@@ -78,6 +82,80 @@
           </li>
           </ul>
     </nav>
+
+
+    <div id="site">
+        <div id="content">
+            <div id="products">
+                <ul>
+                    <li>
+                        <div class="product-image">
+                            <img class="image-product" src="images/coffeeBlendedIce.png" alt="Blended Ice Coffee"/>
+                        </div>
+                        <div class="product-description" data-name="Blended Ice Coffee" data-price="5">
+                            <h3 class="product-name">Blended Ice Coffee</h3>
+                            <p class="product-price">$5</p>
+                            <form class="add-to-cart" method="post" action="cart.html">
+                                <div>
+                                    <label for="qty-1">Quantity</label>
+                                    <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn" /></p>
+                            </form>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="product-image">
+                            <img class="image-product" src="images/coffeeMochaIced.png" alt="Iced Mocha Latte" />
+                        </div>
+                        <div class="product-description" data-name="Iced Mocha Late" data-price="8">
+                            <h3 class="product-name">Iced Mocha Late</h3>
+                            <p class="product-price">$8</p>
+                            <form class="add-to-cart" method="post" action="cart.html">
+                                <div>
+                                    <label for="qty-2">Quantity</label>
+                                    <input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn" /></p>
+                            </form>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="product-image">
+                            <img class="image-product" src="" alt="" />
+                        </div>
+                        <div class="product-description" data-name="Coffee #3" data-price="11">
+                            <h3 class="product-name">Coffee #3</h3>
+                            <p class="product-price">$11</p>
+                            <form class="add-to-cart" method="post" action="cart.html">
+                                <div>
+                                    <label for="qty-3">Quantity</label>
+                                    <input type="text" name="qty-3" id="qty-3" class="qty" value="1" />
+                                </div>
+                                <p><input type="submit" value="Add to cart" class="btn" /></p>
+                            </form>
+                        </div>
+                    </li>
+    
+                    <li>
+                        <a href="cart.html" class="btn">My Cart</a>
+                    </li>
+                    <li>
+                        <a href="checkout.html" class="btn">Go To Checkout</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        
+    
+    </div>
+    
+
+
     <div class="container">
         <!--bannerPic-->
         <div class="row">
@@ -86,6 +164,9 @@
         <!--navbar-->
         
     </div>
+
+
+    
     <div class="container">
         <!--menue header-->
         <div class="row">

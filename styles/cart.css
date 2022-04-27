@@ -83,12 +83,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-image {
 	margin: 0 auto 1em auto;
-	background: #000;
-	width: 150px;
-	height: 150px;
+	background: #EEF5DB;
+	width: 250px;
+	height: 250px;
 	overflow: hidden;
 	border-radius: 50%;
 	
+}
+
+.image-product{
+	width: 250px; height: 250px;
 }
 
 .product-description {
