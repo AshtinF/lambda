@@ -80,6 +80,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 1%;
 	display: block;
 }
+#grad {
+	background-image: linear-gradient(rgba(121, 152, 255, 0.5), rgba(255,255,255,1), rgba(121, 152, 255, 0.5));
+  }
 
 .product-image {
 	margin: 0 auto 1em auto;
