@@ -1,128 +1,199 @@
- //Set up an associative array
- //The keys represent the size of the cake
- //The values represent the cost of the cake i.e A 10" cake cost's $35
- var cake_prices = new Array();
- cake_prices["Round6"]=20;
- cake_prices["Round8"]=25;
- cake_prices["Round10"]=35;
- cake_prices["Round12"]=75;
+         //Set up an associative array
+ //The keys represent the size of the coffee
+ //The values represent the cost of the coffee i.e A 10" coffee cost's $35
+ var coffee_types = new Array();
+ coffee_types["Coffee"]=1.85;
+ coffee_types["Expresso"]=2.85;
+ coffee_types["Decaff"]=2.35;
+
+ 
+
+ var coffee_sizes = new Array();
+ coffee_sizes["12oz"]=0;
+ coffee_sizes["16oz"]=.5;
+ coffee_sizes["20oz"]=1;
+ coffee_sizes["30oz"]=1.5;
+
+ var creamer_number = new Array();
+ creamer_number["0cshot"]=0;
+ creamer_number["1cshot"]=.5;
+ creamer_number["2cshot"]=1;
+
+ 
+ var sugar_number = new Array();
+ sugar_number["0sshot"]=0;
+ sugar_number["1sshot"]=.5;
+ sugar_number["2sshot"]=1;
+ 
+ 
+ 
  
  //Set up an associative array 
- //The keys represent the filling type
- //The value represents the cost of the filling i.e. Lemon filling is $5,Dobash filling is $9
- //We use this this array when the user selects a filling from the form
- var filling_prices= new Array();
- filling_prices["None"]=0;
- filling_prices["Lemon"]=5;
- filling_prices["Custard"]=5;
- filling_prices["Fudge"]=7;
- filling_prices["Mocha"]=8;
- filling_prices["Raspberry"]=10;
- filling_prices["Pineapple"]=5;
- filling_prices["Dobash"]=9;
- filling_prices["Mint"]=5;
- filling_prices["Cherry"]=5;
- filling_prices["Apricot"]=8;
- filling_prices["Buttercream"]=7;
- filling_prices["Chocolate Mousse"]=12;
- 
+ //The keys represent the size type
+ //The value represents the cost of the size i.e. Lemon size is $5,Dobash size is $9
+ //We use this this array when the user selects a size from the form
+
 	 
 	 
-// getCakeSizePrice() finds the price based on the size of the cake.
+// getcoffeeSizePrice() finds the price based on the size of the coffee.
 // Here, we need to take user's the selection from radio button selection
-function getCakeSizePrice()
+function getcoffeeSizePrice()
 {  
-    var cakeSizePrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the cake the user Chooses name=selectedCake":
-    var selectedCake = theForm.elements["selectedcake"];
-    //Here since there are 4 radio buttons selectedCake.length = 4
+    var coffeeSizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the coffee the user Chooses name=selectedsize":
+    var selectedsize = theForm.elements["selectedsize"];
+    //Here since there are 4 radio buttons selectedsize.length = 4
     //We loop through each radio buttons
-    for(var i = 0; i < selectedCake.length; i++)
+    for(var i = 0; i < selectedsize.length; i++)
     {
         //if the radio button is checked
-        if(selectedCake[i].checked)
+        if(selectedsize[i].checked)
         {
-            //we set cakeSizePrice to the value of the selected radio button
-            //i.e. if the user choose the 8" cake we set it to 25
-            //by using the cake_prices array
+            //we set coffeeSizePrice to the value of the selected radio button
+            //i.e. if the user choose the 8" coffee we set it to 25
+            //by using the coffee_types array
             //We get the selected Items value
-            //For example cake_prices["Round8".value]"
-            cakeSizePrice = cake_prices[selectedCake[i].value];
+            //For example coffee_types["Round8".value]"
+            coffeeSizePrice = coffee_types[selectedsize[i].value];
             //If we get a match then we break out of this loop
             //No reason to continue if we get a match
             break;
         }
     }
-    //We return the cakeSizePrice
-    return cakeSizePrice;
+    //We return the coffeeSizePrice
+    return coffeeSizePrice;
 }
 
-//This function finds the filling price based on the 
+//This function finds the size price based on the 
 //drop down selection
-function getFillingPrice()
+function getsizePrice()
 {
-    var cakeFillingPrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the select id="filling"
-     var selectedFilling = theForm.elements["filling"];
+    var coffeesizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the select id="size"
+     var selectedsize = theForm.elements["size"];
      
-    //set cakeFilling Price equal to value user chose
-    //For example filling_prices["Lemon".value] would be equal to 5
-    cakeFillingPrice = filling_prices[selectedFilling.value];
+    //set coffeesize Price equal to value user chose
+    //For example coffee_sizes["Lemon".value] would be equal to 5
+    coffeesizePrice = coffee_sizes[selectedsize.value];
 
-    //finally we return cakeFillingPrice
-    return cakeFillingPrice;
+    //finally we return coffeesizePrice
+    return coffeesizePrice;
 }
+
+
+function getCreamerShotPrice()
+{  
+    var creamerSizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the coffee the user Chooses name=selectedsize":
+    var selectedsize = theForm.elements["selectedsize"];
+    //Here since there are 4 radio buttons selectedsize.length = 4
+    //We loop through each radio buttons
+    for(var i = 0; i < selectedsize.length; i++)
+    {
+        //if the radio button is checked
+        if(selectedsize[i].checked)
+        {
+            //we set coffeeSizePrice to the value of the selected radio button
+            //i.e. if the user choose the 8" coffee we set it to 25
+            //by using the coffee_types array
+            //We get the selected Items value
+            //For example coffee_types["Round8".value]"
+            creamerSizePrice = creamer_number[selectedsize[i].value];
+            //If we get a match then we break out of this loop
+            //No reason to continue if we get a match
+            break;
+        }
+    }
+    //We return the coffeeSizePrice
+    return creamerSizePrice;
+}
+
+//This function finds the size price based on the 
+//drop down selection
+function getCSsizePrice()
+{
+    var creamerSizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the select id="size"
+     var selectedsize = theForm.elements["csize"];
+     
+    //set coffeesize Price equal to value user chose
+    //For example coffee_sizes["Lemon".value] would be equal to 5
+    creamerSizePrice = creamer_number[selectedsize.value];
+
+    //finally we return coffeesizePrice
+    return creamerSizePrice;
+}
+
+function getSugarShotPrice()
+{  
+    var sugarSizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the coffee the user Chooses name=selectedsize":
+    var selectedsize = theForm.elements["selectedsize"];
+    //Here since there are 4 radio buttons selectedsize.length = 4
+    //We loop through each radio buttons
+    for(var i = 0; i < selectedsize.length; i++)
+    {
+        //if the radio button is checked
+        if(selectedsize[i].checked)
+        {
+            //we set coffeeSizePrice to the value of the selected radio button
+            //i.e. if the user choose the 8" coffee we set it to 25
+            //by using the coffee_types array
+            //We get the selected Items value
+            //For example coffee_types["Round8".value]"
+            sugarSizePrice = sugar_number[selectedsize[i].value];
+            //If we get a match then we break out of this loop
+            //No reason to continue if we get a match
+            break;
+        }
+    }
+    //We return the coffeeSizePrice
+    return sugarSizePrice;
+}
+
+//This function finds the size price based on the 
+//drop down selection
+function getSsizePrice()
+{
+    var sugarSizePrice=0;
+    //Get a reference to the form id="coffeeform"
+    var theForm = document.forms["coffeeform"];
+    //Get a reference to the select id="size"
+     var selectedsize = theForm.elements["ssize"];
+     
+    //set coffeesize Price equal to value user chose
+    //For example coffee_sizes["Lemon".value] would be equal to 5
+    sugarSizePrice = sugar_number[selectedsize.value];
+
+    //finally we return coffeesizePrice
+    return sugarSizePrice;
+}
+
+
 
 //candlesPrice() finds the candles price based on a check box selection
-function candlesPrice()
-{
-    var candlePrice=0;
-    //Get a reference to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includecandles"
-    var includeCandles = theForm.elements["includecandles"];
 
-    //If they checked the box set candlePrice to 5
-    if(includeCandles.checked==true)
-    {
-        candlePrice=5;
-    }
-    //finally we return the candlePrice
-    return candlePrice;
-}
-
-function insciptionPrice()
-{
-    //This local variable will be used to decide whether or not to charge for the inscription
-    //If the user checked the box this value will be 20
-    //otherwise it will remain at 0
-    var inscriptionPrice=0;
-    //Get a refernce to the form id="cakeform"
-    var theForm = document.forms["cakeform"];
-    //Get a reference to the checkbox id="includeinscription"
-    var includeInscription = theForm.elements["includeinscription"];
-    //If they checked the box set inscriptionPrice to 20
-    if(includeInscription.checked==true){
-        inscriptionPrice=20;
-    }
-    //finally we return the inscriptionPrice
-    return inscriptionPrice;
-}
         
 function calculateTotal()
 {
     //Here we get the total price by calling our function
     //Each function returns a number so by calling them we add the values they return together
-    var cakePrice = getCakeSizePrice() + getFillingPrice() + candlesPrice() + insciptionPrice();
+    var coffeePrice = getcoffeeSizePrice() + getsizePrice() + getCSsizePrice() + getSsizePrice();
     
     //display the result
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
-    divobj.innerHTML = "Total Price For the Cake $"+cakePrice;
+    divobj.innerHTML = "Total Price For the coffee $"+coffeePrice;
 
 }
 

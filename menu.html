@@ -54,6 +54,7 @@
     <link href="styles/cart.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.shop.js"></script>
+<script src="build.js"></script>
 </head>
 
 <body id="grad">
@@ -80,15 +81,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="checkout.html">Checkout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="build.html">Build your own coffee</a>
-                </li>
             </ul>
         </div>
     </nav>
 
 
-    <div id="site">
+    <div id="site" style="text-align:center;">
         <div id="content">
             
             
@@ -99,24 +97,51 @@
                     <div class="product-description" style="background-color:#7A9E9F;">
                         <h3 class="product-name"style="color: #4F6367;">Build your Own Coffee</h3>
                     </div>
-                    <div class="row">
-                        <div class="col-3">
-                    <div class="product-description" data-name="Coffee" data-price="5" style="background-color:#7A9E9F;">
-                        <h4 class="product-name"style="color: #4F6367;">Creamer</h3>
-                        <p class="product-price">$4</p>
-                        <form class="add-to-cart" method="post">
-                            <div>
-                                <label for="qty-1">Quantity</label>
-                                <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
-                                <select>
-                                    <option name="qty-1" id="qty-1" class="qty" value="1">Coffee</option>
-                                    <option name="qty-2" id="qty-2" class="qty" value="2">Expresso</option>
-                                    <option name="qty-3" id="qty-3" class="qty" value="3">Decaf</option>
-                                </select>
-                            </div>
-                            <p><input type="submit" value="Add to order" class="btn" /></p>
-                        </form>
-                    </div>
+                    <div class="row" style="text-align: center;">
+                        <form action="" id="coffeeform">
+                            <fieldset>
+                             <legend>Build your own Coffee</legend>
+                             <label >Type of Coffee</label>
+                             <input type="radio"  name="selectedsize" value="Coffee"
+                             onclick="calculateTotal()" />
+                             Coffee ($1.85)
+                             <input type="radio"  name="selectedsize" value="Expresso"
+                             onclick="calculateTotal()" />
+                             Expresso ($2.85)
+                             <input type="radio"  name="selectedsize" value="Decaff"
+                             onclick="calculateTotal()" />
+                            Decaff ($2.35)
+                            <br>
+                             <label >Size</label>
+                          
+                             <select id="size" name='size'
+                             onchange="calculateTotal()">
+                             <option value="12oz">12 oz</option>
+                             <option value="16oz">16 oz</option>
+                             <option value="20oz">20 oz</option>
+                             <option value="30oz">30 oz</option>
+                            </select>
+                            <select id="csize" name='csize'
+                            onchange="calculateTotal()">
+                            <option value="0cshot">None</option>
+                            <option value="1cshot">1 Shot</option>
+                            <option value="2cshot">2 Shot</option>
+                           </select>
+                           <select id="ssize" name='ssize'
+                           onchange="calculateTotal()">
+                           <option value="0sshot">None</option>
+                           <option value="1sshot">1 Shot</option>
+                           <option value="2sshot">2 Shot</option>
+                          </select>
+                        
+                        
+                             <br/>
+                        
+                             <div id="totalPrice"></div>
+                          
+                             </fieldset>
+                         </form>
+                         <p><input type="submit" value="Add to cart" class="btn" /></p>
 </div>
 </div>
 
@@ -125,7 +150,7 @@
                
                 
 
-            <h1 class="text-uppercase font-weight-bold"style="color:#4F6367;">Coffee</h1>
+            <h1 class="text-uppercase font-weight-bold"style="color:#4F6367; font-size: 40px">Coffee</h1>
             <div id="products">
                 <ul>
                     <li>
@@ -182,7 +207,7 @@
             </div>
 
             <br/><br/><br/>
-            <h1 class="text-uppercase font-weight-bold"style="color: #4F6367;">Tea</h1>
+            <h1 class="text-uppercase font-weight-bold"style="color: #4F6367; font-size: 40px">Tea</h1>
 
             <div id="products">
                 <ul>
@@ -295,7 +320,7 @@
             </div>
 
             <br/><br/><br/>
-            <h1 class="text-uppercase font-weight-bold"style="color: #4F6367;">Bubble Tea</h1>
+            <h1 class="text-uppercase font-weight-bold"style="color: #4F6367; font-size: 40px">Bubble Tea</h1>
 
             <div id="products">
                 <ul>
@@ -408,7 +433,7 @@
             </div>
 
             <br/><br/><br/>
-            <h1 class="text-uppercase font-weight-bold" style="color: #4F6367;">Smoothies</h1>
+            <h1 class="text-uppercase font-weight-bold" style="color: #4F6367; font-size: 40px">Smoothies</h1>
 
             <div id="products">
                 <ul>
@@ -467,7 +492,7 @@
             </div>
 
             <br/><br/><br/>
-            <h1 class="text-uppercase font-weight-bold" style="color: #4F6367;">Food Items</h1>
+            <h1 class="text-uppercase font-weight-bold" style="color: #4F6367; font-size: 40px">Food Items</h1>
 
             <div id="products">
                 <ul>
